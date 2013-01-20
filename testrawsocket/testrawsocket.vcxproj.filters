@@ -18,18 +18,15 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
+    <ClInclude Include="type.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="main.c">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="testrawsocket.cpp">
+    <ClCompile Include="type.c">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
