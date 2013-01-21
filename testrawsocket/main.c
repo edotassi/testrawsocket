@@ -1,7 +1,13 @@
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <pcap.h>
+#include <WinSock2.h>
 
 #include "type.h"
+
+
+char *p = "\x1\x1\x1\x1\x1\x1\x2\x2\x2\x2\x2\x0\x8\x0\x0\x0\x1";
 
 void packet_handler(u_char *param, const struct pcap_pkthdr *header, const u_char *pkt_data)
 {
@@ -15,7 +21,7 @@ int main(int argc, char *argv[]) {
 
 	pcap_t *handle;
 
-	tobj *t = type_tobj_new();
+	tobj t = type_tobj_new();
 
 	if (pcap_findalldevs(&alldevs, t->errbuf) == -1)
 	{
@@ -31,9 +37,11 @@ int main(int argc, char *argv[]) {
 	}
 
 
-	handle = pcap_open_live(t->dev->name, 65536, 1, 1000, t->errbuf);
+	t->handle = pcap_open_live(t->dev->name, 65536, 1, 1000, t->errbuf);
 
-	pcap_loop(handle, 0, packet_handler, NULL);
+	pcap_sendpacket(t->handle, p, 18);
+
+	pcap_loop(t->handle, 0, packet_handler, NULL);
 
 	system("PAUSE");
 
