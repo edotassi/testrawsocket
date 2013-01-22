@@ -12,12 +12,20 @@ char *p = "\x1\x1\x1\x1\x1\x1\x2\x2\x2\x2\x2\x0\x8\x0\x0\x0\x1";
 /* test func pointer */
 typedef void (* TestFunc) ();
 
+typedef void (*LoadFunc) ();
+typedef void (*SetHandlerFunc) (void(*handler) (int, u_char*));
+typedef void (*StartFunc) ();
+
 TestFunc test_func;
+LoadFunc load;
+SetHandlerFunc set_handler;
+StartFunc start;
+
 GModule *test;
 
-void packet_handler(u_char *param, const struct pcap_pkthdr *header, const u_char *pkt_data)
+void packet_handler(int len, u_char *data)
 {
-	printf("grab packet %d\n", header->len);
+	printf("grab packet %d\n", len);
 }
 
 int main(int argc, char *argv[]) {
@@ -43,15 +51,14 @@ int main(int argc, char *argv[]) {
 	}
 
 	test = g_module_open("DataIO.dll", G_MODULE_BIND_LAZY);
-	g_module_symbol(test, "load", (gpointer*) &test_func);
-	test_func();
+	g_module_symbol(test, "load", (gpointer*) &load);
+	g_module_symbol(test, "set_handler", (gpointer*) &set_handler);
+	g_module_symbol(test, "start", (gpointer*) &start);
 
 
-	t->handle = pcap_open_live(t->dev->name, 65536, 1, 1000, t->errbuf);
-
-	pcap_sendpacket(t->handle, (const u_char*) p, 18);
-
-	pcap_loop(t->handle, 0, packet_handler, NULL);
+	load();
+	set_handler(&packet_handler);
+	start();
 
 	system("PAUSE");
 
