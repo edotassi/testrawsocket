@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <glib.h>
 #include <gmodule.h>
-#include <pcap.h>
+
 #include "type.h"
 
 
@@ -30,25 +30,7 @@ void packet_handler(int len, u_char *data)
 
 int main(int argc, char *argv[]) {
 
-	pcap_if_t *alldevs;
-	pcap_if_t *d;
-
-	pcap_t *handle;
-
 	tobj t = type_tobj_new();
-
-	if (pcap_findalldevs(&alldevs, t->errbuf) == -1)
-	{
-		fprintf(stderr, "unable to find interfaces\n");
-		exit(1);
-	}
-
-	t->dev = alldevs;
-
-	for(d = alldevs; d; d = d->next)
-	{
-		printf("%s\n", d->description);
-	}
 
 	test = g_module_open("DataIO.dll", G_MODULE_BIND_LAZY);
 	g_module_symbol(test, "load", (gpointer*) &load);

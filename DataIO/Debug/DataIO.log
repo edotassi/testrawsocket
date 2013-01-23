@@ -1,15 +1,16 @@
-﻿Compilazione avviata 22/01/2013 22.32.12.
+﻿Compilazione avviata 23/01/2013 17.38.07.
      1>Progetto "C:\Users\edoardo\Documents\Visual Studio 2012\Projects\testrawsocket\DataIO\DataIO.vcxproj" sul nodo 2 (destinazioni: Build).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\edoardo\Downloads\WpdPack_4_1_2\WpdPack\Include /ZI /nologo /W3 /WX- /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt main.c
-         main.c
-     1>c:\users\edoardo\documents\visual studio 2012\projects\testrawsocket\dataio\main.c(30): warning C4090: 'funzione': qualificatori 'const' differenti
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\edoardo\Downloads\WpdPack_4_1_2\WpdPack\Include /ZI /nologo /W3 /WX- /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt DataIO.c
+         DataIO.c
+     1>c:\users\edoardo\documents\visual studio 2012\projects\testrawsocket\dataio\dataio.c(30): warning C4090: 'funzione': qualificatori 'const' differenti
+     1>c:\users\edoardo\documents\visual studio 2012\projects\testrawsocket\dataio\dataio.c(30): warning C4028: parametro formale 2 differente dalla dichiarazione
        Link:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\edoardo\Documents\Visual Studio 2012\Projects\testrawsocket\Debug\DataIO.dll" /INCREMENTAL /NOLOGO /LIBPATH:C:\Users\edoardo\Downloads\WpdPack_4_1_2\WpdPack\Lib Packet.lib wpcap.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\edoardo\Documents\Visual Studio 2012\Projects\testrawsocket\Debug\DataIO.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\edoardo\Documents\Visual Studio 2012\Projects\testrawsocket\Debug\DataIO.lib" /MACHINE:X86 /DLL Debug\main.obj
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\edoardo\Documents\Visual Studio 2012\Projects\testrawsocket\Debug\DataIO.dll" /INCREMENTAL /NOLOGO /LIBPATH:C:\Users\edoardo\Downloads\WpdPack_4_1_2\WpdPack\Lib Packet.lib wpcap.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\edoardo\Documents\Visual Studio 2012\Projects\testrawsocket\Debug\DataIO.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\edoardo\Documents\Visual Studio 2012\Projects\testrawsocket\Debug\DataIO.lib" /MACHINE:X86 /DLL Debug\DataIO.obj
             Creazione della libreria C:\Users\edoardo\Documents\Visual Studio 2012\Projects\testrawsocket\Debug\DataIO.lib e dell'oggetto C:\Users\edoardo\Documents\Visual Studio 2012\Projects\testrawsocket\Debug\DataIO.exp in corso...
          DataIO.vcxproj -> C:\Users\edoardo\Documents\Visual Studio 2012\Projects\testrawsocket\Debug\DataIO.dll
      1>Compilazione progetto "C:\Users\edoardo\Documents\Visual Studio 2012\Projects\testrawsocket\DataIO\DataIO.vcxproj" (destinazioni: Build) completata.
 
 Compilazione completata.
 
-Tempo trascorso 00:00:01.77
+Tempo trascorso 00:00:04.86

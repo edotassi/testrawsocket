@@ -2,13 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <glib.h>
-#include <pcap.h>
+
+#define u_char unsigned char
 
 typedef struct _tobj
 {
-	pcap_if_t *dev;
-	pcap_t *handle;
-	char *errbuf;
+	GString *string;
 } *tobj;
 
 //typedef struct _tobj * tobj;
